@@ -1,0 +1,2 @@
+SELECT x.SKU, x.SkuDes, x.WithOHHst, x.WithOHCur, x.CdTopaz, x.ProdHierarchy AS PH, x.StkUnit, x.[Litre/Btl], x.[Unit/AC], x.[Unit/Sc], x.[Btl/AC], x.[Btl/SC], x.[Btl/Unit], x.TaxRateHK, x.TaxUOMHK, x.TaxRateMO, x.TaxUOMMO, x.DteCrt, x.DteRUpdTopaz AS DteUpd, x.DteRUpdTaxRate, a.Srt4, c.PHSStm, b.PHSBus, x.Stm, a.PHL1, a.PHL2, a.PHL3, x.PHL4, x.BusArea, x.Stream, a.PHNam, a.PHBrd, a.PHQGp, a.PHQly, b.PHBus INTO [@SKU]
+FROM (([#SkuMain] AS x LEFT JOIN [#Qly] AS a ON x.PHL4 = a.PHL4) LEFT JOIN PHLBus AS b ON x.BusArea = b.BusArea) LEFT JOIN PHLStm AS c ON x.Stm = c.Stm;

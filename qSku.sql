@@ -1,0 +1,2 @@
+SELECT x.SKU, x.SkuDes, x.WithOHHst, x.WithOHCur, x.CdTopaz, x.ProdHierarchy AS PH, x.StkUnit, x.[Litre/Btl], x.[Unit/AC], x.[Unit/Sc], x.[Btl/AC], x.[Btl/SC], x.[Btl/Unit], x.TaxRateHK, x.TaxUOMHK, x.TaxRateMO, x.TaxUOMMO, x.DteCrt, x.DteUpdTopaz AS DteUpd, x.DteUpdTaxRate, a.Srt4, PHLStm.PHSStm, PHLBus.PHSBus, x.Stm, a.PHL1, a.PHL2, a.PHL3, x.PHL4, x.BusArea, x.Stream, a.PHNam, a.PHBrd, a.PHQGp, a.PHQly, PHLBus.PHBus
+FROM ((qSku_Main AS x LEFT JOIN qPHQly AS a ON x.PHL4 = a.PHL4) LEFT JOIN PHLBus ON x.BusArea = PHLBus.BusArea) LEFT JOIN PHLStm ON x.Stm = PHLStm.Stm;

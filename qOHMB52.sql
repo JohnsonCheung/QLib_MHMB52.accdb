@@ -1,0 +1,3 @@
+SELECT x.YY, x.MM, x.DD, NmYpStk, Bott, [Bott]*[Bott2SC] AS StdCase, Size, StdCaseSize, x.Val, x.Sku, DesSKU, b.CdB AS [Quality Code], b.NmB AS Quality, d.CdSHBrand AS [Brand Code], NmSHBrand AS Brand, NmFinStream AS Stream, NmHse AS House, SnoHse, SnoFinStream, SnoSHBrand
+FROM ((((((OH AS x INNER JOIN YMDCur AS z ON (x.DD=z.DD) AND (x.MM=z.MM) AND (x.YY=z.YY)) LEFT JOIN YpStk AS a ON x.YpStk       = a.YpStk) LEFT JOIN q1SKU AS b ON x.Sku         = b.Sku) LEFT JOIN SHBrandQ AS c ON b.CdB         = c.CdQly) LEFT JOIN SHBrand AS d ON c.CdSHBrand   = d.CdSHBrand) LEFT JOIN FinStream AS e ON d.CdFinStream = e.CdFinStream) LEFT JOIN Hse AS f ON c.Hse         = f.Hse
+ORDER BY SnoFinStream, NmFinStream, SnoHse, NmHse, SnoSHBrand, NmSHBrand, b.NmB;
